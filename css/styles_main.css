@@ -54,12 +54,19 @@ body {
     width: auto;
 }
 
+#header #banner a img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+
 #topnav nav li a {
     padding: 7.5px 25px;
 }
 
 p {
     color: #0066ff;
+    text-align: center;
 }
 
 a {
