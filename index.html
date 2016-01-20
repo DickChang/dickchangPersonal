@@ -14,49 +14,58 @@
 
     <!-- Include google's angular library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Include Angular's routing library -->
+    <script src="https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
 
     <!-- Modules -->
-    <script src="./js/apps/app_nav.js"></script>
+    <script src="./js/modules/app_nav.js"></script>
 
     <!-- Controllers -->
     <script src="./js/controllers/controller_nav.js"></script>
 
 </head>
-<body>
+<body ng-app="app_profile">
     <div id="canvas">
         <div id="header">
             <div id="banner">
-                <a href="/"><img src="./images/logo_pacifico_carbonfiber.png" /></a>
-                <!--<img src="./images/logo_pacifico_carbonfiber.png" />-->
+                <a href="#/"><img class="dynamic-resize" src="./images/logo_pacifico_carbonfiber.png" /></a>
             </div>
-            <div id="topnav" ng-app="app_nav" >
-                <nav class="nav-main" ng-controller="nav_controller">
+            <div id="topnav">
+                <nav class="nav-main" ng-controller="controller_nav">
                     <div id="nav-site">
                         <ul>
-                            <li class="nav-item"><a href="/">home</a></li>
-                            <li class="nav-item"><a href="/">about</a></li>
-                            <li class="nav-item"><a href="/">contact</a></li>
-                            <li class="nav-item"><a href="/">other</a></li>
-                            <li class="nav-item"><a href="/">stuff</a></li>
-                            <li class="nav-item"><a href="/">yup</a></li>
+                            <li class="nav-item"><a href="#/">home</a></li>
+                            <li class="nav-item"><a href="#/about">about</a></li>
+                            <li class="nav-item"><a href="#/contact">contact</a></li>
+                            <li class="nav-item"><a href="#/">other</a></li>
+                            <li class="nav-item"><a href="#/">stuff</a></li>
+                            <li class="nav-item"><a href="#/">yup</a></li>
                         </ul>
                     </div>
                     <div id="nav-mobile">
                         <a class="btn nav-mobile_open" ng-show="!navMobile_show" ng-click="navMobile_toggle()" href="javascript:;"><img src="{{openBtn}}" /></a>
                         <a class="btn nav-mobile_close" ng-show="navMobile_show" ng-click="navMobile_toggle()" href="javascript:;"><img src="{{closeBtn}}" /></a>
                         <ul ng-show="navMobile_show">
-                            <li class="nav-item"><a href="/">home</a></li>
-                            <li class="nav-item"><a href="/">about</a></li>
-                            <li class="nav-item"><a href="/">contact</a></li>
-                            <li class="nav-item"><a href="/">other</a></li>
-                            <li class="nav-item"><a href="/">stuff</a></li>
-                            <li class="nav-item"><a href="/">yup</a></li>
+                            <li class="nav-item" ng-click="navMobile_toggle()"><a href="#/">home</a></li>
+                            <li class="nav-item" ng-click="navMobile_toggle()"><a href="#/about">about</a></li>
+                            <li class="nav-item" ng-click="navMobile_toggle()"><a href="#/contact">contact</a></li>
+                            <li class="nav-item" ng-click="navMobile_toggle()"><a href="#/">other</a></li>
+                            <li class="nav-item" ng-click="navMobile_toggle()"><a href="#/">stuff</a></li>
+                            <li class="nav-item" ng-click="navMobile_toggle()"><a href="#/">yup</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
+        <div class="divider"></div>
         <p>Under ConstructionQQ</p>
+
+        <div ng-view></div>
+
+        <div id="footer">
+            <a target="_blank" href="http://www.linkedin.com/in/dickchang"><img src="./images/linkedin_button.png" /></a>
+            <a target="_blank" href="https://github.com/DickChang"><img src="./images/octocat_small.png" /></a>
+        </div>
     </div>
 
 </body>

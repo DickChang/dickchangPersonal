@@ -1,4 +1,4 @@
-app_nav.controller( 'nav_controller', ['$scope', function($scope) {
+app_profile.controller( 'controller_nav', ['$scope', function($scope) {
     $scope.navMobile_show = false;
     $scope.openBtn = "./images/menu_icon.png";
     $scope.closeBtn = "./images/menu_close_icon.png";
