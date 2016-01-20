@@ -6,29 +6,58 @@
     <meta name="description" content="Personal Website for Richard Chang" />
     <meta name="author" content"Richard Chang" />
 
+    <!-- Responsive web design for device type  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link type="text/css" rel="stylesheet" href="./css/styles_main.css" />
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT Serif" />
+
+    <!-- Include google's angular library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <!-- Modules -->
+    <script src="./js/apps/app_nav.js"></script>
+
+    <!-- Controllers -->
+    <script src="./js/controllers/controller_nav.js"></script>
+
 </head>
 <body>
     <div id="canvas">
         <div id="header">
             <div id="banner">
                 <a href="/"><img src="./images/logo_pacifico_carbonfiber.png" /></a>
+                <!--<img src="./images/logo_pacifico_carbonfiber.png" />-->
             </div>
-            <div id="topnav">
-                <nav class="main-nav">
-                    <ul id="siteNav">
-                        <li class="nav-item"><a href="/">Home</a></li>
-                        <li class="nav-item"><a href="/">About</a></li>
-                        <li class="nav-item"><a href="/">Contact</a></li>
-                        <li class="nav-item"><a href="/">Other</a></li>
-                        <li class="nav-item"><a href="/">Stuff</a></li>
-                        <li class="nav-item"><a href="/">Yup</a></li>
-                    </ul>
+            <div id="topnav" ng-app="app_nav" >
+                <nav class="nav-main" ng-controller="nav_controller">
+                    <div id="nav-site">
+                        <ul>
+                            <li class="nav-item"><a href="/">home</a></li>
+                            <li class="nav-item"><a href="/">about</a></li>
+                            <li class="nav-item"><a href="/">contact</a></li>
+                            <li class="nav-item"><a href="/">other</a></li>
+                            <li class="nav-item"><a href="/">stuff</a></li>
+                            <li class="nav-item"><a href="/">yup</a></li>
+                        </ul>
+                    </div>
+                    <div id="nav-mobile">
+                        <a class="btn nav-mobile_open" ng-show="!navMobile_show" ng-click="navMobile_toggle()" href="javascript:;"><img src="{{openBtn}}" /></a>
+                        <a class="btn nav-mobile_close" ng-show="navMobile_show" ng-click="navMobile_toggle()" href="javascript:;"><img src="{{closeBtn}}" /></a>
+                        <ul ng-show="navMobile_show">
+                            <li class="nav-item"><a href="/">home</a></li>
+                            <li class="nav-item"><a href="/">about</a></li>
+                            <li class="nav-item"><a href="/">contact</a></li>
+                            <li class="nav-item"><a href="/">other</a></li>
+                            <li class="nav-item"><a href="/">stuff</a></li>
+                            <li class="nav-item"><a href="/">yup</a></li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </div>
         <p>Under ConstructionQQ</p>
     </div>
+
 </body>
 </html>

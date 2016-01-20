@@ -1,68 +1,114 @@
 body {
     background-image: url("../images/bg01.png");
-    font-family: "PT Serif","Courier New","Courier","monospace";
-    /*font-family: "Old Standard TT","Courier New","Courier","monospace";*/
-
+    font-family: "PT Serif", "monospace";
+    z-index: 0;
 }
 
 #canvas {
     width: auto;
     max-width: 1000px;
     background-color: #ffffff;
-    padding: 20px 20px 20px 20px;
-    border: 0px 0px 0px 0px;
-    margin: 0px auto 0px auto;
+    padding: 20px;
+    border: 0px;
+    margin: 0px auto;
     position: relative;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 #header {
     width: 100%;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    padding: 0px;
     text-align: center;
 }
 
-#logo {
-    text-align: center;
+#banner {
 }
 
+/*auto resize the image based on window size*/
+#header #banner img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* \9 indicates that this line only applies to IE 7, 8, and 9*/
+}
+
+/* ==================================== */
+/* ========== NAV Properties ========== */
 #topnav {
     width: 100%;
     text-align: center;
 }
 
-.main-nav {
+.nav-main {
     display: inline-block;
     float: none;
-    width: 100%;
-}
-
-#siteNav {
-    width: 100%;
     padding: 0px;
     margin: 0px;
     border: 0px;
-    list-style: none outside none;
+    width: 100%;
 }
 
-.nav-item {
+#nav-site {
     display: inline-block;
+}
+#nav-mobile {
+    width: 50%;
+    display: none;
+}
+#nav-mobile ul {
+}
+.nav-main div ul {
+    list-style: none outside none;
+    display: inline-block;
+    float: none;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    width: 100%;
+}
+
+.btn {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    background-color: #ffffff;
+}
+.nav-mobile_open {
+}
+.nav-mobile_close {
+    position: absolute;
+    right: 100px;
+    z-index: 5;
+}
+
+/* Changes which nav bar is shown based on current window size */
+@media only screen and (max-width: 500px) {
+    #nav-site {
+        display: none;
+    }
+    #nav-mobile {
+        display: inline-block;
+    }
+}
+.nav-item {
     float: none;
     position: relative;
     text-align: left;
     width: auto;
 }
-
-#header #banner a img {
-    max-width: 100%;
-    height: auto;
-    width: auto\9;
+#nav-site .nav-item {
+    display: inline-block;
+}
+#nav-mobile .nav-item {
+    display: block;
 }
 
-#topnav nav li a {
+#topnav nav #nav-site li a {
     padding: 7.5px 25px;
 }
+/* ========== NAV Properties ========== */
+/* ==================================== */
 
 p {
     color: #0066ff;
